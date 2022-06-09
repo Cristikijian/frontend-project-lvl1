@@ -21,6 +21,9 @@
   "homepage": "https://github.com/Cristikijian/frontend-project-lvl1#readme",
   "type": "module",
   "dependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "readline-sync": "^1.4.10"
   }
 }
