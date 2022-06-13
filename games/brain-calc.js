@@ -37,6 +37,7 @@ export default function calcGame() {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer. Correct answer was ${expressionResult}`);
+      break;
     }
     questionNumber += 1;
   }

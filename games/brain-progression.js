@@ -26,6 +26,7 @@ export default function progressionGame() {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer. Correct answer was ${numberToGuess}`);
+      break;
     }
     questionNumber += 1;
   }

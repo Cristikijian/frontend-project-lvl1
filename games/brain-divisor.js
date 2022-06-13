@@ -23,6 +23,7 @@ export default function divisorGame() {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer. Correct answer was ${greatestDivider}`);
+      break;
     }
     questionNumber += 1;
   }

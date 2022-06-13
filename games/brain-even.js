@@ -1,6 +1,10 @@
 import readlineSync from 'readline-sync';
 import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
+function getOppositeAnswer(someAnswer) {
+  return someAnswer === 'yes' ? 'no' : 'yes';
+}
+
 export default function evenGame() {
   let number = getRandomIntInclusive(1, 1000);
   let result = 0;
@@ -13,7 +17,8 @@ export default function evenGame() {
       result += 1;
       console.log('Correct!');
     } else {
-      console.log('Try again!');
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${getOppositeAnswer(answer)}'.`);
+      break;
     }
     questionNumber += 1;
     number = getRandomIntInclusive(1, 1000);

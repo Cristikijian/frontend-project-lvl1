@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 12 10:09:57 2022
+# Make data base, printed on Mon Jun 13 14:46:00 2022
 
 # Variables
 
@@ -53,7 +55,7 @@ PATH = /home/cristikijian/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-da2a29c4-e5ce-45c5-ac80-6069494e0192.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-1041935a-757b-4d65-9de6-2fc71302864a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -77,7 +79,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = cristikijian
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -144,10 +146,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=4/93=4%
+# Load=67/1024=7%, Rehash=0, Collisions=4/92=4%
 
 # Pattern-specific Variable Values
 
@@ -227,8 +227,6 @@ install:
 # strcache performance: lookups = 32 / hit rate = 25%
 # hash-table stats:
 # Load=24/8192=0%, Rehash=0, Collisions=1/32=3%
-# Finished Make data base on Sun Jun 12 10:09:57 2022
+# Finished Make data base on Mon Jun 13 14:46:00 2022
 
  
-make: *** No rule to make target 'all'.  Stop.
-

@@ -27,6 +27,7 @@ export default function primeGame() {
       console.log('Correct!');
     } else {
       console.log('Try again!');
+      break;
     }
     questionNumber += 1;
   }
