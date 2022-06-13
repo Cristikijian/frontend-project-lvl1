@@ -21,7 +21,6 @@ export default function primeGame() {
     const number = getRandomIntInclusive(1, 100);
     const isPrimeNumber = isPrime(number);
     const answer = readlineSync.question(`Question: ${number}\n`);
-    console.log(isPrimeNumber, answer);
     if ((isPrimeNumber && answer === 'yes') || (!isPrimeNumber && answer === 'no')) {
       console.log(`Your answer: ${answer} `);
       result += 1;
