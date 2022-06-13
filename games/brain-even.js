@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-import startBlock from '../src/cli.js';
-import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT, startGame } from '../src/index.js';
 
-function gameCounter(name) {
+export default function evenGame(name) {
   let number = getRandomIntInclusive(1, 1000);
   let result = 0;
   let questionNumber = 1;
@@ -23,6 +22,4 @@ function gameCounter(name) {
   return result === 3 ? console.log(`Congratulations, ${name}!`) : console.log('You died');
 }
 
-const userName = startBlock();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-gameCounter(userName);
+startGame();

@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT, startGame } from '../src/index.js';
 
 function sum(a, b) {
   const answer = readlineSync.question(`Question: ${a} + ${b}\n`);
@@ -42,3 +42,5 @@ export default function calcGame() {
   }
   return result;
 }
+
+startGame();

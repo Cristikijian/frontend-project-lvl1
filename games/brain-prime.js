@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
-import startBlock from '../src/cli.js';
-import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { startGame, getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
 function isPrime(num) {
   if (num <= 1) {
@@ -14,7 +13,7 @@ function isPrime(num) {
   return true;
 }
 
-function primeGame() {
+export default function primeGame() {
   let result = 0;
   let questionNumber = 1;
 
@@ -35,11 +34,4 @@ function primeGame() {
   return result;
 }
 
-const userName = startBlock();
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-const result = primeGame();
-if (result === QUESTIONS_COUNT) {
-  console.log(`Congratulations, ${userName}!`);
-} else {
-  console.log(`Let's try again, ${userName}!`);
-}
+startGame();

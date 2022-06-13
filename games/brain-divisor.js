@@ -1,6 +1,5 @@
 import readlineSync from 'readline-sync';
-import startBlock from '../src/cli.js';
-import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT, startGame } from '../src/index.js';
 
 function getGreatestDivider(a, b) {
   if (b) {
@@ -9,7 +8,7 @@ function getGreatestDivider(a, b) {
   return Math.abs(a);
 }
 
-function divisorGame() {
+export default function divisorGame() {
   let result = 0;
   let questionNumber = 1;
 
@@ -30,11 +29,4 @@ function divisorGame() {
   return result;
 }
 
-const userName = startBlock();
-console.log('Find the greatest common divisor of given numbers.');
-const result = divisorGame();
-if (result === QUESTIONS_COUNT) {
-  console.log(`Congratulations, ${userName}!`);
-} else {
-  console.log(`Let's try again, ${userName}!`);
-}
+startGame();

@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-import startBlock from '../src/cli.js';
-import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { startGame, getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
-function progressionGame() {
+export default function progressionGame() {
   let result = 0;
   let questionNumber = 1;
 
@@ -33,11 +32,4 @@ function progressionGame() {
   return result;
 }
 
-const userName = startBlock();
-console.log('What number is missing in the progression?');
-const result = progressionGame();
-if (result === QUESTIONS_COUNT) {
-  console.log(`Congratulations, ${userName}!`);
-} else {
-  console.log(`Let's try again, ${userName}!`);
-}
+startGame();
