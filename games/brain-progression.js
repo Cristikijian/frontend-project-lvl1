@@ -13,13 +13,12 @@ export default function progressionGame() {
 
     while (progression.length <= 10) {
       progression.push(startNumber);
-      progression.join(' ');
       startNumber += stepNumber;
     }
 
     const numberToGuess = progression[unknownElement];
     progression[unknownElement] = '..';
-    const answer = readlineSync.question(`Question: ${progression}\n`);
+    const answer = readlineSync.question(`Question: ${progression.join(' ')}\n`);
 
     if (numberToGuess === Number(answer)) {
       console.log(`Your answer: ${answer} `);
