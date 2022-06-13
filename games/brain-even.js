@@ -7,7 +7,7 @@ export default function evenGame() {
   let questionNumber = 1;
 
   while (questionNumber <= QUESTIONS_COUNT) {
-    const answer = readlineSync.question(`Question:${number}\n`);
+    const answer = readlineSync.question(`Question: ${number}\n`);
 
     if ((number % 2 === 0 && answer === 'yes') || (number % 2 !== 0 && answer === 'no')) {
       result += 1;
