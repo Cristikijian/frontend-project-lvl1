@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { startGame, getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
 export default function progressionGame() {
   let result = 0;
@@ -31,5 +31,3 @@ export default function progressionGame() {
   }
   return result;
 }
-
-startGame();

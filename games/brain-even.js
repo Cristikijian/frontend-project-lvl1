@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive, QUESTIONS_COUNT, startGame } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
-export default function evenGame(name) {
+export default function evenGame() {
   let number = getRandomIntInclusive(1, 1000);
   let result = 0;
   let questionNumber = 1;
@@ -19,7 +19,5 @@ export default function evenGame(name) {
     number = getRandomIntInclusive(1, 1000);
   }
 
-  return result === 3 ? console.log(`Congratulations, ${name}!`) : console.log('You died');
+  return result;
 }
-
-startGame();

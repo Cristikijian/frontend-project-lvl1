@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive, QUESTIONS_COUNT, startGame } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
 function getGreatestDivider(a, b) {
   if (b) {
@@ -28,5 +28,3 @@ export default function divisorGame() {
   }
   return result;
 }
-
-startGame();

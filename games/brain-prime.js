@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { startGame, getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
+import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
 function isPrime(num) {
   if (num <= 1) {
@@ -33,5 +33,3 @@ export default function primeGame() {
   }
   return result;
 }
-
-startGame();
