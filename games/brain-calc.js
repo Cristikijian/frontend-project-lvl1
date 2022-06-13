@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-import startBlock from '../src/cli.js';
 import { getRandomIntInclusive, QUESTIONS_COUNT } from '../src/index.js';
 
 function sum(a, b) {
@@ -22,7 +21,7 @@ function getRandomOperator() {
   return operators[Math.floor(Math.random() * operators.length)];
 }
 
-function calcGame() {
+export default function calcGame() {
   let result = 0;
   let questionNumber = 1;
 
@@ -42,13 +41,4 @@ function calcGame() {
     questionNumber += 1;
   }
   return result;
-}
-
-const userName = startBlock();
-console.log('What is the result of the expression?');
-const result = calcGame();
-if (result === QUESTIONS_COUNT) {
-  console.log(`Congratulations, ${userName}!`);
-} else {
-  console.log('You died');
 }
