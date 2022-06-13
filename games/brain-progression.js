@@ -13,6 +13,7 @@ export default function progressionGame() {
 
     while (progression.length <= 10) {
       progression.push(startNumber);
+      progression.join(' ');
       startNumber += stepNumber;
     }
 
