@@ -8,3 +8,5 @@ Brain-calc <a href="https://asciinema.org/a/JiSirHJJuxnd5mnhvBXrm0I2p"></a>
 Brain-prime <a href="https://asciinema.org/a/fwLSCNfU8Op35btHG4wV3ykF6"></a>
 Brain-progression <a href="https://asciinema.org/a/GgbJM1mTlM7lTIrVChAoa8iDA"></a>
 Brain-divisor <a href="https://asciinema.org/a/qfX8PECbc4B88G2Sl5EbmmR2o"></a>
+
+[![asciicast](https://asciinema.org/a/113463.png)](https://asciinema.org/a/JiSirHJJuxnd5mnhvBXrm0I2p)
