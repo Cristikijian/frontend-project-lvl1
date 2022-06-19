@@ -15,7 +15,7 @@ export function isPrime(num) {
     return false;
   }
   for (let i = 2; i < num; i += 1) {
-    if (isEven(num)) {
+    if (num % i === 0) {
       return false;
     }
   }
