@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive, isPrime } from '../src/utils.js';
+import { getRandomIntInclusive, isPrime } from '../utils.js';
 
 export default function primeGame() {
   const number = getRandomIntInclusive();
