@@ -1,25 +1,31 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
-export default function progressionGame() {
-  const unknownElement = getRandomIntInclusive(0, 9);
-  const stepNumber = getRandomIntInclusive(1, 10);
-  let startNumber = getRandomIntInclusive(1, 50);
-  const progression = [];
+const firstIndexOfProgression = 0;
+const lastIndexOfProgression = 9;
+const firstStepIndex = 1;
+const lastStepIndex = 10;
 
-  while (progression.length <= 10) {
+function genProgression(progression = []) {
+  const stepNumber = getRandomNumber(firstStepIndex, lastStepIndex);
+  let startNumber = getRandomNumber();
+  while (progression.length <= lastStepIndex) {
     progression.push(startNumber);
     startNumber += stepNumber;
   }
+  return progression;
+}
 
-  const numberToGuess = progression[unknownElement];
-  progression[unknownElement] = '..';
-  const userAnswer = readlineSync.question(`Question: ${progression.join(' ')}\n`);
+export default function progressionGame() {
+  const hidenElementIndex = getRandomNumber(firstIndexOfProgression, lastIndexOfProgression);
+  const progression = genProgression();
+  const numberToGuess = progression[hidenElementIndex];
+  progression[hidenElementIndex] = '..';
+  const userAnswer = readlineSync.question(`Question: ${progression.join(' ')}\nYour answer: `);
 
   if (Number(userAnswer) !== numberToGuess) {
     return false;
   }
-  console.log(`Your answer: ${userAnswer} `);
   console.log('Correct!');
   return true;
 }

@@ -1,37 +1,44 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive } from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 
-function sum(a, b) {
-  const answer = readlineSync.question(`Question: ${a} + ${b}\n`);
-  return [a + b, Number(answer)];
-}
+const SUM = '+';
+const SUB = '-';
+const MUL = '*';
+const operators = [SUM, SUB, MUL];
 
-function subtract(a, b) {
-  const answer = readlineSync.question(`Question: ${a} - ${b}\n`);
-  return [a - b, Number(answer)];
-}
-
-function multiply(a, b) {
-  const answer = readlineSync.question(`Question: ${a} * ${b}\n`);
-  return [a * b, Number(answer)];
-}
-
-function getRandomOperator() {
-  const operators = [sum, subtract, multiply];
-  const index = Math.floor(Math.random() * operators.length);
-  return operators[index];
+function askExpression(a, b, operatorStr) {
+  return readlineSync.question(`Question: ${a} ${operatorStr} ${b}\nYour answer: `);
 }
 
 export default function calcGame() {
-  const expression = getRandomOperator();
-  const firstNumber = getRandomIntInclusive();
-  const secondNumber = getRandomIntInclusive();
-  const [expressionResult, userAnswer] = expression(firstNumber, secondNumber);
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
 
-  if (userAnswer !== expressionResult) {
+  let expressionResult;
+  let userAnswer;
+
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
+
+  switch (operator) {
+    case SUM:
+      userAnswer = askExpression(firstNumber, secondNumber, operator);
+      expressionResult = firstNumber + secondNumber;
+      break;
+    case SUB:
+      userAnswer = askExpression(firstNumber, secondNumber, operator);
+      expressionResult = firstNumber - secondNumber;
+      break;
+    case MUL:
+      userAnswer = askExpression(firstNumber, secondNumber, operator);
+      expressionResult = firstNumber * secondNumber;
+      break;
+    default:
+      break;
+  }
+
+  if (Number(userAnswer) !== expressionResult) {
     return false;
   }
-  console.log(`Your answer: ${userAnswer} `);
   console.log('Correct!');
   return true;
 }

@@ -1,15 +1,18 @@
 import readlineSync from 'readline-sync';
-import { getRandomIntInclusive, isEven } from '../utils.js';
+import { getRandomNumber } from '../utils.js';
+
+function isEven(num) {
+  return num % 2 === 0;
+}
 
 export default function evenGame() {
-  const number = getRandomIntInclusive();
+  const number = getRandomNumber();
   const correctAnswer = isEven(number) ? 'yes' : 'no';
-  const userAnswer = readlineSync.question(`Question: ${number}\n`);
+  const userAnswer = readlineSync.question(`Question: ${number}\nYour answer: `);
 
   if (userAnswer !== correctAnswer) {
     return false;
   }
-  console.log(`Your answer: ${userAnswer} `);
   console.log('Correct!');
   return true;
 }
