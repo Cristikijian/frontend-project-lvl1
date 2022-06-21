@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../utils.js';
+import { answerBlock } from '../index.js';
 
+export const startQuestion = 'What is the result of the expression?';
 const SUM = '+';
 const SUB = '-';
 const MUL = '*';
@@ -10,7 +12,7 @@ function askExpression(a, b, operatorStr) {
   return readlineSync.question(`Question: ${a} ${operatorStr} ${b}\nYour answer: `);
 }
 
-export default function calcGame() {
+export function calcGame() {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
 
@@ -35,10 +37,5 @@ export default function calcGame() {
     default:
       break;
   }
-
-  if (Number(userAnswer) !== expressionResult) {
-    return false;
-  }
-  console.log('Correct!');
-  return true;
+  return answerBlock(Number(userAnswer), expressionResult);
 }

@@ -1,7 +1,7 @@
 import startBlock from './cli.js';
 import { QUESTIONS_COUNT } from './constans.js';
 
-export default function startGame(startQuestion, playGame) {
+export function startGame(startQuestion, playGame) {
   const userName = startBlock();
   console.log(startQuestion);
 
@@ -12,4 +12,12 @@ export default function startGame(startQuestion, playGame) {
     }
   }
   console.log(`Congratulations, ${userName}!`);
+}
+
+export function answerBlock(userAnswer, result) {
+  if (userAnswer !== result) {
+    return false;
+  }
+  console.log('Correct!');
+  return true;
 }

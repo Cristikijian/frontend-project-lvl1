@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../utils.js';
+import { answerBlock } from '../index.js';
+
+export const startQuestion = ('Find the greatest common divisor of given numbers.');
 
 function getGreatestDivider(a, b) {
   if (b) {
@@ -8,14 +11,10 @@ function getGreatestDivider(a, b) {
   return Math.abs(a);
 }
 
-export default function divisorGame() {
+export function divisorGame() {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const greatestDivider = getGreatestDivider(firstNumber, secondNumber);
   const userAnswer = readlineSync.question(`Question: ${firstNumber} ${secondNumber}\nYour answer: `);
-  if (Number(userAnswer) !== greatestDivider) {
-    return false;
-  }
-  console.log('Correct!');
-  return true;
+  return answerBlock(Number(userAnswer), greatestDivider);
 }
