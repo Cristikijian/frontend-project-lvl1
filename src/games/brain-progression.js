@@ -1,6 +1,4 @@
-import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../utils.js';
-import { answerBlock } from '../index.js';
 
 export const startQuestion = ('What number is missing in the progression?');
 const firstIndexOfProgression = 0;
@@ -23,7 +21,5 @@ export function progressionGame() {
   const progression = genProgression();
   const numberToGuess = progression[hidenElementIndex];
   progression[hidenElementIndex] = '..';
-  const userAnswer = readlineSync.question(`Question: ${progression.join(' ')}\nYour answer: `);
-
-  return answerBlock(Number(userAnswer), numberToGuess);
+  return [`${progression.join(' ')}`, numberToGuess];
 }

@@ -1,41 +1,29 @@
-import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../utils.js';
-import { answerBlock } from '../index.js';
 
-export const startQuestion = 'What is the result of the expression?';
-const SUM = '+';
-const SUB = '-';
-const MUL = '*';
-const operators = [SUM, SUB, MUL];
-
-function askExpression(a, b, operatorStr) {
-  return readlineSync.question(`Question: ${a} ${operatorStr} ${b}\nYour answer: `);
+function sum(a, b) {
+  return [a + b, '+'];
 }
 
-export function calcGame() {
+function subtract(a, b) {
+  return [a - b, '-'];
+}
+
+function multiply(a, b) {
+  return [a * b, '*'];
+}
+
+function getRandomOperator() {
+  const operators = [sum, subtract, multiply];
+  const index = Math.floor(Math.random() * operators.length);
+  return operators[index];
+}
+
+export default function calcGame() {
+  const expression = getRandomOperator();
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
+  const [expressionResult, operatorSymbol] = expression(firstNumber, secondNumber);
 
-  let expressionResult;
-  let userAnswer;
-
-  const operator = operators[getRandomNumber(0, operators.length - 1)];
-
-  switch (operator) {
-    case SUM:
-      userAnswer = askExpression(firstNumber, secondNumber, operator);
-      expressionResult = firstNumber + secondNumber;
-      break;
-    case SUB:
-      userAnswer = askExpression(firstNumber, secondNumber, operator);
-      expressionResult = firstNumber - secondNumber;
-      break;
-    case MUL:
-      userAnswer = askExpression(firstNumber, secondNumber, operator);
-      expressionResult = firstNumber * secondNumber;
-      break;
-    default:
-      break;
-  }
-  return answerBlock(Number(userAnswer), expressionResult);
+  const question = `${firstNumber} ${operatorSymbol} ${secondNumber}`;
+  return [question, expressionResult];
 }

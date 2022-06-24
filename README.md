@@ -13,19 +13,19 @@ Brain Games is a set of five console games based on popular mobile brain trainin
 
 ## Demonstration videos:
 
-<a href="https://asciinema.org/a/RRwf22BAPKxx3w3XYtKEw8pc5">Brain-even</a>
+<a href="https://asciinema.org/a/R8tA35pNfQIMx1AcvugFuYjb8">Brain-even</a>
 
 
-<a href="https://asciinema.org/a/U0q4v5Rq4BNc1Z8mktaJ8uTb3">Brain-calc</a>
+<a href=" https://asciinema.org/a/mKvXcwIFtsgMikauiQ4zZiJ1v">Brain-calc</a>
 
 
-<a href="https://asciinema.org/a/dsiDtBIefHrlhgYHvfjJYgSpz">Brain-prime</a>
+<a href="https://asciinema.org/a/9WL7cEAi2LVWJAQ6hkHLM7rDH">Brain-prime</a>
 
 
-<a href="https://asciinema.org/a/2f0GA91YFzs8Y1yVwJ0rRfEbd">Brain-progression </a>
+<a href="https://asciinema.org/a/V0Bjzi4K0vmHwFbfYFiJ45B8O">Brain-progression </a>
 
 
-<a href="https://asciinema.org/a/kGUFWeWKdq9FpZ6l4Z1DH30x8">Brain-divisor</a>
+<a href="https://asciinema.org/a/CganToJ6pcgtUZNQWRQPZOZwn">Brain-divisor</a>
 
 
 ## System requirements:
