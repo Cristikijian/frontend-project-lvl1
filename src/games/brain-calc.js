@@ -25,7 +25,6 @@ export function calcGame() {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const [expressionResult, operatorSymbol] = expression(firstNumber, secondNumber);
-  console.log(expression);
 
   const question = `${firstNumber} ${operatorSymbol} ${secondNumber}`;
   return [question, expressionResult];
