@@ -6,19 +6,21 @@ const lastIndexOfProgression = 9;
 const firstStepIndex = 1;
 const lastStepIndex = 10;
 
-function genProgression(progression = []) {
-  const stepNumber = getRandomNumber(firstStepIndex, lastStepIndex);
-  let startNumber = getRandomNumber();
+function genProgression(startNumber, stepNumber) {
+  const progression = [];
+  let number = Number(startNumber);
   while (progression.length <= lastStepIndex) {
-    progression.push(startNumber);
-    startNumber += stepNumber;
+    progression.push(number);
+    number += stepNumber;
   }
   return progression;
 }
 
 export function progressionGame() {
   const hidenElementIndex = getRandomNumber(firstIndexOfProgression, lastIndexOfProgression);
-  const progression = genProgression();
+  const startNumber = getRandomNumber();
+  const stepNumber = getRandomNumber(firstStepIndex, lastStepIndex);
+  const progression = genProgression(startNumber, stepNumber);
   const numberToGuess = progression[hidenElementIndex];
   progression[hidenElementIndex] = '..';
   return [`${progression.join(' ')}`, numberToGuess];
