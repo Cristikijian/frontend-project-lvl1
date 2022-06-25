@@ -9,7 +9,7 @@ Brain Games is a set of five console games based on popular mobile brain trainin
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Cristikijian/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Cristikijian/frontend-project-lvl1/actions)
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/fa0db17d5e992ec24063efeaf75b03230fbe77d975c6244f0885f086ee8e9f37/maintainability" /></a>
+<a href="https://codeclimate.com/github/Cristikijian/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/e06b002b0bda062ade5e/maintainability" /></a>
 
 ## Demonstration videos:
 
