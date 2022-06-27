@@ -1,8 +1,7 @@
 import { getRandomNumber } from '../utils.js';
+import { startGame } from '../index.js';
 
-export const startQuestion = ('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-export function isPrime(num) {
+function isPrime(num) {
   const minMultiplier = Math.sqrt(num);
   if (num <= 1) {
     return false;
@@ -15,8 +14,11 @@ export function isPrime(num) {
   return true;
 }
 
-export function primeGame() {
+function primeGame() {
   const number = getRandomNumber();
   const correctAnswer = isPrime(number) ? 'yes' : 'no';
   return [number, correctAnswer];
+}
+export default function runPrimeGame() {
+  startGame('Answer "yes" if given number is prime. Otherwise answer "no".', primeGame);
 }

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { divisorGame, startQuestion } from '../src/games/brain-gcd.js';
-import { startGame } from '../src/index.js';
+import runDivisorGame from '../src/games/brain-gcd.js';
 
-startGame(startQuestion, divisorGame);
+runDivisorGame();

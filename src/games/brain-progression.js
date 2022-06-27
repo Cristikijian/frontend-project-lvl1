@@ -1,6 +1,6 @@
 import { getRandomNumber } from '../utils.js';
+import { startGame } from '../index.js';
 
-export const startQuestion = ('What number is missing in the progression?');
 const firstIndexOfProgression = 0;
 const lastIndexOfProgression = 9;
 const firstStepIndex = 1;
@@ -16,7 +16,7 @@ function genProgression(startNumber, stepNumber) {
   return progression;
 }
 
-export function progressionGame() {
+function progressionGame() {
   const hidenElementIndex = getRandomNumber(firstIndexOfProgression, lastIndexOfProgression);
   const startNumber = getRandomNumber();
   const stepNumber = getRandomNumber(firstStepIndex, lastStepIndex);
@@ -24,4 +24,8 @@ export function progressionGame() {
   const numberToGuess = progression[hidenElementIndex];
   progression[hidenElementIndex] = '..';
   return [`${progression.join(' ')}`, numberToGuess];
+}
+
+export default function runProgressionGame() {
+  startGame('What number is missing in the progression?', progressionGame);
 }

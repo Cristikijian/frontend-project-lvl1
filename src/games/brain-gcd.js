@@ -1,6 +1,5 @@
 import { getRandomNumber } from '../utils.js';
-
-export const startQuestion = ('Find the greatest common divisor of given numbers.');
+import { startGame } from '../index.js';
 
 function getGreatestDivider(a, b) {
   if (b) {
@@ -9,10 +8,14 @@ function getGreatestDivider(a, b) {
   return Math.abs(a);
 }
 
-export function divisorGame() {
+function divisorGame() {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const greatestDivider = getGreatestDivider(firstNumber, secondNumber);
   const question = `${firstNumber} ${secondNumber}`;
   return [question, greatestDivider];
+}
+
+export default function runDivisorGame() {
+  startGame('Find the greatest common divisor of given numbers.', divisorGame);
 }

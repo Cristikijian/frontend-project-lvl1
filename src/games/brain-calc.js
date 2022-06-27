@@ -1,6 +1,5 @@
 import { getRandomNumber } from '../utils.js';
-
-export const startQuestion = 'What is the result of the expression?';
+import { startGame } from '../index.js';
 
 function sum(a, b) {
   return [a + b, '+'];
@@ -20,7 +19,7 @@ function getRandomOperator() {
   return operators[index];
 }
 
-export function calcGame() {
+function calcGame() {
   const expression = getRandomOperator();
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
@@ -28,4 +27,8 @@ export function calcGame() {
 
   const question = `${firstNumber} ${operatorSymbol} ${secondNumber}`;
   return [question, expressionResult];
+}
+
+export default function runCalcGame() {
+  startGame('What is the result of the expression?', calcGame);
 }
